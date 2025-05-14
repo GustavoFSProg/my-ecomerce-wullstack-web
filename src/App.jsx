@@ -15,7 +15,7 @@ const AppContainer = styled.div`
   /* background: gray; */
   justify-content: center;
   align-items: center;
-  margin-left: 135px;
+  /* margin-left: 135px; */
   margin-top: 50px;
   padding-bottom: 100px;
 
@@ -24,7 +24,22 @@ const AppContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 47px;
+    /* margin-left: 47px; */
+  }
+`;
+
+const ContainerCard = styled.div`
+  display: flex;
+  width: 100vw;
+  height: auto;
+  /* background: green; */
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  /* margin-right: 20px; */
+
+  @media screen and (max-width: 800px) {
+    margin-right: 22px;
   }
 `;
 
@@ -46,49 +61,51 @@ function App() {
     <>
       <NavBar />
 
-      <AppContainer>
-        <Card>
-          <img src={image1} width="200" alt="image1" />
-          <p>Placa Mãe</p>
-          <p>R$ 550,00</p>
-        </Card>
+      <ContainerCard>
+        <AppContainer>
+          <Card>
+            <img src={image1} width="200" alt="image1" />
+            <p>Placa Mãe</p>
+            <p>R$ 550,00</p>
+          </Card>
 
-        <Card>
-          <img src={image1} width="200" alt="image1" />
-          <p>Placa Mãe</p>
-          <p>R$ 550,00</p>
-        </Card>
-        <Card>
-          <img src={image1} width="200" alt="image1" />
-          <p>Placa Mãe</p>
-          <p>R$ 550,00</p>
-        </Card>
-        <Card>
-          <img src={image1} width="200" alt="image1" />
-          <p>Placa Mãe</p>
-          <p>R$ 550,00</p>
-        </Card>
-        <Card>
-          <img src={image1} width="200" alt="image1" />
-          <p>Placa Mãe</p>
-          <p>R$ 550,00</p>
-        </Card>
-        <Card>
-          <img src={image1} width="200" alt="image1" />
-          <p>Placa Mãe</p>
-          <p>R$ 550,00</p>
-        </Card>
-        <Card>
-          <img src={image1} width="200" alt="image1" />
-          <p>Placa Mãe</p>
-          <p>R$ 550,00</p>
-        </Card>
-        <Card>
-          <img src={image1} width="200" alt="image1" />
-          <p>Placa Mãe</p>
-          <p>R$ 550,00</p>
-        </Card>
-      </AppContainer>
+          <Card>
+            <img src={image1} width="200" alt="image1" />
+            <p>Placa Mãe</p>
+            <p>R$ 550,00</p>
+          </Card>
+          <Card>
+            <img src={image1} width="200" alt="image1" />
+            <p>Placa Mãe</p>
+            <p>R$ 550,00</p>
+          </Card>
+          <Card>
+            <img src={image1} width="200" alt="image1" />
+            <p>Placa Mãe</p>
+            <p>R$ 550,00</p>
+          </Card>
+          <Card>
+            <img src={image1} width="200" alt="image1" />
+            <p>Placa Mãe</p>
+            <p>R$ 550,00</p>
+          </Card>
+          <Card>
+            <img src={image1} width="200" alt="image1" />
+            <p>Placa Mãe</p>
+            <p>R$ 550,00</p>
+          </Card>
+          <Card>
+            <img src={image1} width="200" alt="image1" />
+            <p>Placa Mãe</p>
+            <p>R$ 550,00</p>
+          </Card>
+          <Card>
+            <img src={image1} width="200" alt="image1" />
+            <p>Placa Mãe</p>
+            <p>R$ 550,00</p>
+          </Card>
+        </AppContainer>
+      </ContainerCard>
     </>
   );
 }
