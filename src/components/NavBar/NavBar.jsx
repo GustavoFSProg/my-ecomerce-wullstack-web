@@ -10,6 +10,12 @@ const NavBarContainer = styled.div`
   background: lightgrey;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    height: 200px;
+    padding-bottom: 30px;
+  }
 `;
 
 const Container = styled.div`
