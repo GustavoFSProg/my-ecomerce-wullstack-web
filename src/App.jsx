@@ -9,7 +9,7 @@ const AppContainer = styled.div`
   display: flex;
   width: 100vw;
   height: 100vh;
-  background: gray;
+  /* background: gray; */
   justify-content: center;
   align-items: center;
 `;
