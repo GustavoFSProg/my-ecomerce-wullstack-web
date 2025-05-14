@@ -7,7 +7,7 @@ const NavBarContainer = styled.div`
   width: 80vw;
   height: auto;
   padding: 10px;
-  background: lightgrey;
+  background: #e6e6e6;
   justify-content: space-between;
   align-items: center;
 
@@ -22,7 +22,7 @@ const Container = styled.div`
   display: flex;
   width: 100vw;
   height: auto;
-  background: lightgrey;
+  background: #e6e6e6;
   justify-content: center;
   /* align-items: center; */
 `;
