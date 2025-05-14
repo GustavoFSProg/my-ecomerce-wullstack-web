@@ -52,6 +52,7 @@ const Card = styled.div`
   align-items: center;
   flex-direction: column;
   margin-right: 20px;
+  border-radius: 10px;
 `;
 
 function App() {
