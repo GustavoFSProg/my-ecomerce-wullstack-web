@@ -32,7 +32,7 @@ const Card = styled.div`
   display: flex;
   width: 250px;
   height: 400px;
-  background: gray;
+  background: #d9d9d9;
   justify-content: center;
   align-items: center;
   flex-direction: column;
