@@ -21,6 +21,18 @@ const Container = styled.div`
   /* align-items: center; */
 `;
 
+const Button = styled.button`
+  display: flex;
+  margin-right: 20px;
+  width: 100px;
+  height: 40px;
+  border-radius: 18px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  color: gray;
+`;
+
 function NavBar() {
   return (
     <>
@@ -61,7 +73,7 @@ function NavBar() {
               flexDirection: "row",
             }}
           >
-            <button style={{ marginRight: "20px" }}>LOGIN</button>
+            <Button>Login</Button>
             <IoCartOutline style={{ fontSize: "36px" }} />
           </div>
         </NavBarContainer>
