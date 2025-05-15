@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar/NavBar";
 import styled from "styled-components";
 import image1 from "./assets/ps5-slim.png";
 import api from "./api";
+import { Link } from "react-router-dom";
 
 const AppContainer = styled.div`
   display: grid;
@@ -69,6 +70,10 @@ function App() {
     }
   }
 
+  function handleStorage(id) {
+    localStorage.setItem("Id-Product", id);
+  }
+
   useEffect(() => {
     getProducts();
   }, []);
@@ -82,31 +87,33 @@ function App() {
           {products.map((items) => {
             return (
               <>
-                <Card>
-                  <img src={items.image} width="200" alt="image1" />
-                  <p>{items.name}</p>
-                  <p>R$ {items.price}</p>
-                </Card>
+                <Link onClick={() => handleStorage(items.id)}>
+                  <Card>
+                    <img src={items.image} width="200" alt="image1" />
+                    <p>{items.name}</p>
+                    <p>R$ {items.price}</p>
+                  </Card>
+                </Link>
               </>
             );
           })}
 
+          <Card>
+            <img src={image1} width="200" alt="image1" />
+            <p>Placa Mãe</p>
+            <p>R$ 550,00</p>
+          </Card>
+          <Card>
+            <img src={image1} width="200" alt="image1" />
+            <p>Placa Mãe</p>
+            <p>R$ 550,00</p>
+          </Card>
+          <Card>
+            <img src={image1} width="200" alt="image1" />
+            <p>Placa Mãe</p>
+            <p>R$ 550,00</p>
+          </Card>
           {/* <Card>
-            <img src={image1} width="200" alt="image1" />
-            <p>Placa Mãe</p>
-            <p>R$ 550,00</p>
-          </Card>
-          <Card>
-            <img src={image1} width="200" alt="image1" />
-            <p>Placa Mãe</p>
-            <p>R$ 550,00</p>
-          </Card>
-          <Card>
-            <img src={image1} width="200" alt="image1" />
-            <p>Placa Mãe</p>
-            <p>R$ 550,00</p>
-          </Card>
-          <Card>
             <img src={image1} width="200" alt="image1" />
             <p>Placa Mãe</p>
             <p>R$ 550,00</p>
