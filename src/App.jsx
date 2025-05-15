@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 // import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import styled from "styled-components";
 import image1 from "./assets/ps5-slim.png";
+import api from "./api";
 
 const AppContainer = styled.div`
   display: grid;
@@ -56,7 +57,21 @@ const Card = styled.div`
 `;
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [products, setProducts] = useState([]);
+
+  async function getProducts() {
+    try {
+      const { data } = await api.get("/get-products");
+
+      setProducts(data);
+    } catch (error) {
+      return alert("ERROR!", error);
+    }
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
     <>
@@ -64,13 +79,19 @@ function App() {
 
       <ContainerCard>
         <AppContainer>
-          <Card>
-            <img src={image1} width="200" alt="image1" />
-            <p>Placa Mãe</p>
-            <p>R$ 550,00</p>
-          </Card>
+          {products.map((items) => {
+            return (
+              <>
+                <Card>
+                  <img src={items.image} width="200" alt="image1" />
+                  <p>{items.name}</p>
+                  <p>R$ {items.price}</p>
+                </Card>
+              </>
+            );
+          })}
 
-          <Card>
+          {/* <Card>
             <img src={image1} width="200" alt="image1" />
             <p>Placa Mãe</p>
             <p>R$ 550,00</p>
@@ -104,7 +125,7 @@ function App() {
             <img src={image1} width="200" alt="image1" />
             <p>Placa Mãe</p>
             <p>R$ 550,00</p>
-          </Card>
+          </Card> */}
         </AppContainer>
       </ContainerCard>
     </>
