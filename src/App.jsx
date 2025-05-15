@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar/NavBar";
 import styled from "styled-components";
 import image1 from "./assets/ps5-slim.png";
 import api from "./api";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AppContainer = styled.div`
   display: grid;
@@ -60,6 +60,8 @@ const Card = styled.div`
 function App() {
   const [products, setProducts] = useState([]);
 
+  const navigate = useNavigate();
+
   async function getProducts() {
     try {
       const { data } = await api.get("/get-products");
@@ -72,6 +74,10 @@ function App() {
 
   function handleStorage(id) {
     localStorage.setItem("Id-Product", id);
+
+    navigate("/cart");
+
+    return null;
   }
 
   useEffect(() => {
@@ -86,15 +92,18 @@ function App() {
         <AppContainer>
           {products.map((items) => {
             return (
-              <>
-                <Link onClick={() => handleStorage(items.id)}>
+              <button
+                style={{ cursor: "pointer" }}
+                onClick={() => handleStorage(items.id)}
+              >
+                <div key={items.id}>
                   <Card>
                     <img src={items.image} width="200" alt="image1" />
                     <p>{items.name}</p>
                     <p>R$ {items.price}</p>
                   </Card>
-                </Link>
-              </>
+                </div>
+              </button>
             );
           })}
 
