@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import Cart from "./components/Cart/Cart";
+import { ProductContextProvider } from "./productContext";
 
 function Routers() {
   return (
