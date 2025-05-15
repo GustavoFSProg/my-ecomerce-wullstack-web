@@ -11,6 +11,14 @@ function Cart() {
     const { data } = await api.get(`/get-one/${ID}`);
 
     setProduct(data);
+
+    console.log(`ID: ${id}`);
+
+    const productsArray = [ID];
+
+    productsArray.push([...productsArray, id]);
+
+    console.log(productsArray);
   }
 
   useEffect(() => {

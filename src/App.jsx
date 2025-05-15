@@ -67,15 +67,29 @@ function App() {
       const { data } = await api.get("/get-products");
 
       setProducts(data);
+
+      alert(productsArray);
     } catch (error) {
       return alert("ERROR!", error);
     }
   }
 
   function handleStorage(id) {
-    localStorage.setItem("Id-Product", id);
+    const productsArray = [id];
 
-    navigate("/cart");
+    productsArray.push([...productsArray, id]);
+
+    localStorage.setItem("Id-Product", productsArray);
+
+    // console.log(`ID: ${id}`);
+
+    // const productsArray = ["ABC"];
+
+    // productsArray.push([...productsArray, id]);
+
+    // console.log(productsArray);
+
+    // navigate("/cart");
 
     return null;
   }
